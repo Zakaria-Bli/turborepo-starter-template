@@ -1,0 +1,55 @@
+{
+  "name": "turborepo-starter-template",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Reusable TypeScript monorepo starter powered by pnpm and Turborepo",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.15.0",
+      "onFail": "download"
+    }
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo watch dev",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:watch": "turbo watch test",
+    "test:coverage": "turbo run test:coverage",
+    "audit:dependencies": "pnpm audit --audit-level moderate",
+    "validate": "turbo run lint typecheck test build //#format:check",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,mts,cts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,jsonc,yaml,yml,md,mdx,css,scss,html}": "prettier --write"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@types/node": "24.13.3",
+    "eslint": "^10.9.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.12",
+    "turbo": "^2.10.11",
+    "typescript": "6.0.3"
+  }
+}
