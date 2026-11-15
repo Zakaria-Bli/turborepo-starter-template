@@ -39,14 +39,14 @@
     "*.{json,jsonc,yaml,yml,md,mdx,css,scss,html}": "prettier --write"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.1",
-    "@commitlint/config-conventional": "^21.2.0",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@types/node": "24.13.3",
     "eslint": "^10.9.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.3.0",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.9.6",
     "tsx": "^4.23.12",
     "turbo": "^2.10.11",
